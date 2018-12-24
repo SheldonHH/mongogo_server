@@ -28,6 +28,7 @@ func (m *MoviesDAO) Connect() {
 	db = session.DB(m.Database)
 }
 
+
 // Find list of movies
 func (m *MoviesDAO) FindAll() ([]Movie, error) {
 	var movies []Movie

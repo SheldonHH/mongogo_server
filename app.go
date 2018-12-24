@@ -15,6 +15,7 @@ import (
 
 var config = Config{}
 var dao = MoviesDAO{}
+var actdao = ActiontracesDAO{}
 
 // GET list of movies
 func AllMoviesEndPoint(w http.ResponseWriter, r *http.Request) {
@@ -25,6 +26,12 @@ func AllMoviesEndPoint(w http.ResponseWriter, r *http.Request) {
 	}
 	respondWithJson(w, http.StatusOK, movies)
 }
+
+// GET list of action_traces
+func AllActsEndPoint(w http.ResponseWriter, r *http.Request) {
+
+}
+
 
 // GET a movie by its ID
 func FindMovieEndpoint(w http.ResponseWriter, r *http.Request) {
@@ -106,6 +113,7 @@ func init() {
 // Define HTTP request routes
 func main() {
 	r := mux.NewRouter()
+	r.HandleFunc("/acts", AllActsEndPoint).Methods("GET")
 	r.HandleFunc("/movies", AllMoviesEndPoint).Methods("GET")
 	r.HandleFunc("/movies", CreateMovieEndPoint).Methods("POST")
 	r.HandleFunc("/movies", UpdateMovieEndPoint).Methods("PUT")
