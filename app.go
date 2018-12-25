@@ -29,13 +29,12 @@ func AllMoviesEndPoint(w http.ResponseWriter, r *http.Request) {
 
 // GET list of action_traces
 func AllActsEndPoint(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	act, err := actdao.FindById(params["id"])
+	action_traces, err := actdao.FindAll()
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Invalid Act ID")
+		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	respondWithJson(w, http.StatusOK, act)
+	respondWithJson(w, http.StatusOK, action_traces)
 }
 
 
