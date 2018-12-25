@@ -37,6 +37,16 @@ func AllActsEndPoint(w http.ResponseWriter, r *http.Request) {
 	respondWithJson(w, http.StatusOK, action_traces)
 }
 
+// GET a action_traces by its ID
+func FindActionTraceEndpoint(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	action_trace, err := actdao.FindById(params["id"])
+	if err != nil {
+		respondWithError(w, http.StatusBadRequest, "Invalid Movie ID")
+		return
+	}
+	respondWithJson(w, http.StatusOK, action_trace)
+}
 
 // GET a movie by its ID
 func FindMovieEndpoint(w http.ResponseWriter, r *http.Request) {
