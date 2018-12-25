@@ -1,5 +1,5 @@
 package models
-import "gopkg.in/mgo.v2/bson"
+//import "gopkg.in/mgo.v2/bson"
 
 type receipt struct {
 	Name        	string        `bson:"receiver" json:"receiver"`

@@ -2,8 +2,6 @@ package dao
 
 import (
 	"log"
-
-	. "github.com/sheldonhh/mongogo_server/models"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -13,10 +11,9 @@ type ActiontracesDAO struct {
 	Database string
 }
 
-var db *mgo.Database
 
 const (
-	COLLECTION = "action_traces"
+	ACTCOLLECTION = "action_traces"
 )
 
 // Establish a connection to database
@@ -30,33 +27,33 @@ func (m *ActiontracesDAO) Connect() {
 
 
 // Find list of movies
-func (m *ActiontracesDAO) FindAll() ([]Act, error) {
-	var acts []Act
-	err := db.C(COLLECTION).Find(bson.M{}).All(&acts)
-	return acts, err
+func (m *ActiontracesDAO) FindAll() ([]ActionTrace, error) {
+	var actiontraces []ActionTrace
+	err := db.C(ACTCOLLECTION).Find(bson.M{}).All(&actiontraces)
+	return actiontraces, err
 }
 
 // Find a act by its id
-func (m *ActiontracesDAO) FindById(id string) (Act, error) {
-	var act Act
-	err := db.C(COLLECTION).FindId(bson.ObjectIdHex(id)).One(&act)
+func (m *ActiontracesDAO) FindById(id string) (ActionTrace, error) {
+	var act ActionTrace
+	err := db.C(ACTCOLLECTION).FindId(bson.ObjectIdHex(id)).One(&act)
 	return act, err
 }
 
 // Insert a act into database
-func (m *ActiontracesDAO) Insert(act Act) error {
-	err := db.C(COLLECTION).Insert(&act)
+func (m *ActiontracesDAO) Insert(act ActionTrace) error {
+	err := db.C(ACTCOLLECTION).Insert(&act)
 	return err
 }
 
 // Delete an existing act
-func (m *ActiontracesDAO) Delete(act Act) error {
-	err := db.C(COLLECTION).Remove(&act)
+func (m *ActiontracesDAO) Delete(act ActionTrace) error {
+	err := db.C(ACTCOLLECTION).Remove(&act)
 	return err
 }
 
 // Update an existing act
-func (m *ActiontracesDAO) Update(act Act) error {
-	err := db.C(COLLECTION).UpdateId(act.ID, &act)
+func (m *ActiontracesDAO) Update(act ActionTrace) error {
+	err := db.C(ACTCOLLECTION).UpdateId(act.ID, &act)
 	return err
 }

@@ -2,7 +2,6 @@ package dao
 
 import (
 	"log"
-
 	. "github.com/sheldonhh/mongogo_server/models"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"

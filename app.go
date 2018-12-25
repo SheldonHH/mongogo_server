@@ -10,7 +10,7 @@ import (
 	"github.com/gorilla/mux"
 	. "github.com/sheldonhh/mongogo_server/config"
 	. "github.com/sheldonhh/mongogo_server/dao"
-	. "github.com/sheldonhh/mongogo_server/models"
+	//. "github.com/sheldonhh/mongogo_server/models"
 )
 
 var config = Config{}
