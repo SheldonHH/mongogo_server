@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0a3866c-c4b3-46c9-af8b-d5d2f9e36a01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/actiontraces_go.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/actiontraces_go.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/movies_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/movies_dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/act.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/act.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/action_traces.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/actiontrace.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/authorization.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/authorization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/receipt.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/receipt.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/movies_dao.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -128,20 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/actiontraces_go.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state relative-caret-position="354">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
               <folding>
                 <element signature="e#13#126#0" expanded="true" />
               </folding>
@@ -201,8 +185,8 @@
       <find>ogo_server/dao</find>
       <find>ActionTraces</find>
       <find>ActionTrace</find>
-      <find>action_traces</find>
       <find>COLLECTION</find>
+      <find>action_traces</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -210,8 +194,8 @@
       <replace>sheldonhh/mongogo_server</replace>
       <replace>Act</replace>
       <replace>actiontraces</replace>
-      <replace>ActionTrace</replace>
       <replace>ACTCOLLECTION</replace>
+      <replace>ActionTrace</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../mongogo_servermongogo_server/models</dir>
@@ -312,6 +296,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -347,27 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/receipt.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/movie.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/authorization.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/act.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -389,20 +353,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/actiontraces_go.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding>
-            <element signature="e#13#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/movies_dao.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/movie.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/receipt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/authorization.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/actiontraces_go.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding>
+            <element signature="e#13#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
