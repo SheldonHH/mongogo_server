@@ -1,5 +1,6 @@
 package models
 import "gopkg.in/mgo.v2/bson"
+import "github.com/sheldonhh/mongogo_server/models"
 
 type action_traces struct {
 	ID          	bson.ObjectId  `bson:"_id" json:"id"`
