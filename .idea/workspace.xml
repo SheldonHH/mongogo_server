@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0a3866c-c4b3-46c9-af8b-d5d2f9e36a01" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-    </list>
+    <list default="true" id="d0a3866c-c4b3-46c9-af8b-d5d2f9e36a01" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+            <state relative-caret-position="277">
+              <caret line="121" column="22" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="23" />
               <folding>
                 <element signature="e#14#255#0" expanded="true" />
               </folding>
@@ -404,8 +402,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+        <state relative-caret-position="277">
+          <caret line="121" column="22" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="23" />
           <folding>
             <element signature="e#14#255#0" expanded="true" />
           </folding>
