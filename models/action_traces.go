@@ -14,7 +14,7 @@ type action_traces struct {
 	ProducerBlockId string		   `bson:"producer_block_id" json:"producer_block_id`
 	AccountRamDeltas string		   `bson:"account_ram_deltas" json:"account_ram_deltas`
 	Except 			string		   `bson:"except" json:"except`
-	TrxStatus 			string		`bson:"trx_status" json:"trx_status`
+	TrxStatus 		string	       `bson:"trx_status" json:"trx_status`
 	CreatedAt 		string	       `bson:"created_at" json:"created_at`
 }
 
