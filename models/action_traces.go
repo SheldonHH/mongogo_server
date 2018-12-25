@@ -1,10 +1,9 @@
 package models
 import "gopkg.in/mgo.v2/bson"
-import "github.com/sheldonhh/mongogo_server/models"
 
 type action_traces struct {
 	ID          	bson.ObjectId  `bson:"_id" json:"id"`
-	Recepit        	recepit        `bson:"recepit" json:"recepit"`
+	Recepit        	receipt        `bson:"recepit" json:"recepit"`
 	Act       		act			   `bson:"act" json:"act"`
 	ContextFree 	bool		   `bson:"context_free" json:"context_free"`
 	elasped 	    int            `bson:"elasped" json:"elasped"`
