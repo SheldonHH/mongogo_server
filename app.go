@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -48,13 +49,15 @@ func FindActionTraceEndpoint(w http.ResponseWriter, r *http.Request) {
 	respondWithJson(w, http.StatusOK, action_trace)
 }
 
-
 // GET a action_traces by its ID
 func FindActionTraceQueryEndpoint(w http.ResponseWriter, r *http.Request) {
-	//params := mux.Vars(r)
-	action_trace, err := actdao.FindByQuery("Find")
+	params := mux.Vars(r)
+	name := params["name"]
+	to := params["to"]
+	from := params["from"]
+	action_trace, err := actdao.FindByQuery(name, to, from)
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Invalid Movie ID")
+		respondWithError(w, http.StatusBadRequest, fmt.Sprintf("Invalid Movie ID, %v", err))
 		return
 	}
 	respondWithJson(w, http.StatusOK, action_trace)
@@ -147,7 +150,7 @@ func main() {
 	r.HandleFunc("/movies", DeleteMovieEndPoint).Methods("DELETE")
 	r.HandleFunc("/movies/{id}", FindMovieEndpoint).Methods("GET")
 	r.HandleFunc("/acts/{id}", FindActionTraceEndpoint).Methods("GET")
-	r.HandleFunc("/acts/", FindActionTraceQueryEndpoint).Methods("GET")
+	r.HandleFunc("/acts/{name}/{to}/{from}", FindActionTraceQueryEndpoint).Methods("GET")
 	if err := http.ListenAndServe(":3000", r); err != nil {
 		log.Fatal(err)
 	}
