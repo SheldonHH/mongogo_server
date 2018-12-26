@@ -48,6 +48,18 @@ func FindActionTraceEndpoint(w http.ResponseWriter, r *http.Request) {
 	respondWithJson(w, http.StatusOK, action_trace)
 }
 
+
+// GET a action_traces by its ID
+func FindActionTraceQueryEndpoint(w http.ResponseWriter, r *http.Request) {
+	//params := mux.Vars(r)
+	action_trace, err := actdao.FindByQuery("Find")
+	if err != nil {
+		respondWithError(w, http.StatusBadRequest, "Invalid Movie ID")
+		return
+	}
+	respondWithJson(w, http.StatusOK, action_trace)
+}
+
 // GET a movie by its ID
 func FindMovieEndpoint(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
@@ -135,6 +147,7 @@ func main() {
 	r.HandleFunc("/movies", DeleteMovieEndPoint).Methods("DELETE")
 	r.HandleFunc("/movies/{id}", FindMovieEndpoint).Methods("GET")
 	r.HandleFunc("/acts/{id}", FindActionTraceEndpoint).Methods("GET")
+	r.HandleFunc("/acts/", FindActionTraceQueryEndpoint).Methods("GET")
 	if err := http.ListenAndServe(":3000", r); err != nil {
 		log.Fatal(err)
 	}

@@ -1,6 +1,8 @@
 package dao
 
 import (
+	"encoding/json"
+	"fmt"
 	"log"
 	. "github.com/sheldonhh/mongogo_server/models"
 	mgo "gopkg.in/mgo.v2"
@@ -40,6 +42,45 @@ func (m *ActiontracesDAO) FindById(id string) (ActionTrace, error) {
 	err := db.C(ACTCOLLECTION).FindId(bson.ObjectIdHex(id)).One(&act)
 	return act, err
 }
+
+// https://godoc.org/github.com/globalsign/mgo/bson#M
+func (m *ActiontracesDAO) FindByQuery(query string) (ActionTrace, error) {
+	var act ActionTrace
+
+	//json.Marshal()
+	expect := `{"act.name":"transfer","act.account":"miaomiaobibi",$or:[{"act.data.to":"youbeforeme1"},{"act.data.from":"youbeforeme1"}]}`
+	type FindReq struct{
+		actName string `json:"act.name"`
+		actAccount string `json:"act.account"`
+		or []map[string]string `json:"$or"`
+	}
+	var findReq = FindReq{
+		actAccount:"miaomiaobibi",
+		actName:"transfer",
+		or:[]map[string]string{
+			{"act.data.to":"youbeforeme1"},
+			{"act.data.from":"youbeforeme1"},
+		},
+	}
+
+	b,err:=json.Marshal(findReq)
+
+	fmt.Printf("=======\n" +
+		"b: %v, err: %v", string(b), err)
+
+	fmt.Printf("%v", "%v", string(b)==expect)
+	//{"act.name":"transfer","act.account":"miaomiaobibi",$or:[{"act.data.to":"youbeforeme1"},{"act.data.from":"youbeforeme1"}]},{"act":1,"block_time":1}
+	//db.action_traces.find({"act.name":"transfer","act.account":"miaomiaobibi",$or:[{"act.data.to":"youbeforeme1"},{"act.data.from":"youbeforeme1"}]})
+	//err := db.C(ACTCOLLECTION).Find(
+	//	bson.M{
+	//		"reciever":"1",
+	//		"account":"1",
+	//		"name":"1",
+	//	}).One(&act)
+	return act, err
+}
+
+
 
 // Insert a act into database
 func (m *ActiontracesDAO) Insert(act ActionTrace) error {
