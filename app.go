@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -48,13 +49,12 @@ func FindActionTraceEndpoint(w http.ResponseWriter, r *http.Request) {
 	respondWithJson(w, http.StatusOK, action_trace)
 }
 
-
 // GET a action_traces by its ID
 func FindActionTraceQueryEndpoint(w http.ResponseWriter, r *http.Request) {
 	//params := mux.Vars(r)
 	action_trace, err := actdao.FindByQuery("Find")
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Invalid Movie ID")
+		respondWithError(w, http.StatusBadRequest, fmt.Sprintf("Invalid Movie ID, %v", err))
 		return
 	}
 	respondWithJson(w, http.StatusOK, action_trace)
